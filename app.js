@@ -140,7 +140,7 @@ function formatMoney(value, digits = 2) {
 function updateStatus(phase) {
   const copy = {
     before: "还没开工，窝囊费暂未到账",
-    working: "正在到账，白熊已进入工作状态",
+    working: "正在到账，锦言已进入工作状态",
     after: "今日窝囊费已结算完毕",
   };
   statusEl.textContent = copy[phase];
