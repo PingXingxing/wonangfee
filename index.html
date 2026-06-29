@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="窝囊费到账中，一个上班实时收益可视化 Web 小工具。"
+    />
+    <title>窝囊费到账中</title>
+    <link rel="stylesheet" href="./styles.css?v=20260629-3" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <button class="settings-button" id="open-settings" type="button">
+        设置
+      </button>
+
+      <section class="counter-stage" aria-label="窝囊费实时到账">
+        <div class="copy-block">
+          <p class="eyebrow">WONANGFEE</p>
+          <h1>窝囊费到账中</h1>
+          <div class="amount-row">
+            <span class="currency">¥</span>
+            <span class="amount" id="earned-amount">0.0000</span>
+            <span class="tick" id="tick-badge">+¥0.0000</span>
+          </div>
+          <p class="status-line" id="status-line">正在计算今天的窝囊费</p>
+        </div>
+
+        <div class="mascot-stage" aria-hidden="true">
+          <img
+            class="bear-worker"
+            src="./assets/bear-worker.gif"
+            alt=""
+          />
+          <img
+            class="sidekick-worker"
+            src="./assets/sidekick-worker.gif"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+
+    <dialog class="settings-dialog" id="settings-dialog">
+      <form class="settings-panel" id="settings-form" method="dialog">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">设置页面</p>
+            <h2>调整窝囊费算法</h2>
+          </div>
+          <button
+            class="icon-button"
+            id="close-settings"
+            type="button"
+            aria-label="关闭设置"
+          >
+            ×
+          </button>
+        </div>
+
+        <label class="field">
+          <span>月薪</span>
+          <input
+            id="salary"
+            name="salary"
+            type="number"
+            min="0"
+            step="100"
+            inputmode="decimal"
+            value="10000"
+          />
+        </label>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>上班时间</span>
+            <input id="start-time" name="startTime" type="time" value="09:00" />
+          </label>
+
+          <label class="field">
+            <span>下班时间</span>
+            <input id="end-time" name="endTime" type="time" value="18:30" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>每月工作日</span>
+          <input
+            id="workdays"
+            name="workdays"
+            type="number"
+            min="1"
+            max="31"
+            step="1"
+            inputmode="numeric"
+            value="22"
+          />
+        </label>
+
+        <div class="panel-actions">
+          <button class="secondary-button" id="reset-settings" type="button">
+            恢复默认
+          </button>
+          <button class="primary-button" type="submit">保存</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./app.js?v=20260629-3"></script>
+  </body>
+</html>
